@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Mascot from "../components/Mascot.astro";
+---
+
+<BaseLayout
+  title="About — Daily Trivia Sprint"
+  description="What Daily Trivia Sprint is, and why we built a fresh 60-question trivia sprint every day."
+>
+  <main class="wrap about-wrap">
+    <Mascot className="about-mascot" />
+    <h1 class="serif">About Daily Trivia Sprint</h1>
+    <p>
+      Daily Trivia Sprint delivers a new 60-question trivia round every day,
+      split into four quick heats of 15 questions each. Play a few questions
+      on a coffee break, or sprint through the whole set in one sitting &mdash;
+      it's up to you.
+    </p>
+    <p>
+      Questions span science, geography, history, food, space, nature, and
+      the arts, each with a short explanation so you walk away having learned
+      something, win or lose.
+    </p>
+    <p>
+      Daily Trivia Sprint is free to play, supported by the ads you see
+      around the page. No account is required to play as a guest; registering
+      just lets you keep your streak and score history between visits.
+    </p>
+  </main>
+
+  <style>
+    .about-wrap {
+      max-width: 640px;
+      padding: 48px 24px 60px;
+    }
+    .about-mascot {
+      width: 110px;
+      margin-bottom: 20px;
+    }
+    .about-wrap p {
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+  </style>
+</BaseLayout>
