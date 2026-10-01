@@ -1,17 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant:ital,wght@0,500;0,600;1,500&display=swap");
 
 :root {
-  --cream: #ede4d3;
-  --cream-light: #f7f2e8;
-  --ink: #2b2a28;
+  --cream: #f2e9dc;
+  --cream-light: #f8f3e9;
+  --ink: #1c1b19;
   --ink-soft: #5b5750;
-  --blue: #4f7596;
-  --blue-dark: #3a5a76;
-  --red: #c1512f;
-  --red-dark: #a33f22;
+  --blue: #56748e;
+  --blue-dark: #3f5b73;
+  --red: #b93c2a;
+  --red-dark: #972f20;
   --gold: #d9b45a;
-  --border: #ddd2ba;
-  --radius: 10px;
+  --ghost: #ede1c8;
+  --border: #e3dac4;
+  --radius: 4px;
 }
 
 * {
@@ -25,17 +26,22 @@ body {
 }
 
 body {
-  font-family: "Fredoka", system-ui, sans-serif;
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 400;
   color: var(--ink);
   background: #fff;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 15px;
 }
 
 h1,
 h2,
 h3,
 .serif {
-  font-family: "Lora", Georgia, serif;
+  font-family: "Cormorant", Georgia, serif;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -48,19 +54,19 @@ a:hover {
 }
 
 .wrap {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .btn {
   display: inline-block;
   border: none;
   border-radius: var(--radius);
-  padding: 14px 22px;
+  padding: 12px 24px;
   font-family: inherit;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   text-align: center;
 }
@@ -96,11 +102,12 @@ a:hover {
 
 .pill-tabs {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 20px;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: var(--blue);
+  font-weight: 400;
   flex-wrap: wrap;
 }
 
@@ -116,7 +123,7 @@ a:hover {
 }
 
 .pill-tabs button.active {
-  color: var(--ink);
+  color: var(--blue);
   font-weight: 600;
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--blue);
 }
