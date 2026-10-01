@@ -1,0 +1,103 @@
+---
+---
+
+<div class="quiz-card" id="quiz-root">
+  <div class="pill-tabs">
+    <button data-batch-tab class="active">Questions 1 to 15</button>
+    <button data-batch-tab>Questions 16 to 30</button>
+    <button data-batch-tab>Questions 31 to 45</button>
+    <button data-batch-tab>Questions 46 to 60</button>
+  </div>
+
+  <div class="q-head">
+    <span class="q-number" data-q-number>001</span>
+    <span class="q-category" data-q-category></span>
+  </div>
+
+  <p class="q-text" data-q-text></p>
+
+  <div class="q-choices" data-q-choices></div>
+
+  <p class="feedback" data-q-feedback></p>
+
+  <button class="btn btn-primary" data-q-submit>Submit</button>
+  <button class="btn btn-secondary" data-q-next hidden>Next Question &rarr;</button>
+
+  <p class="q-score" data-q-score></p>
+
+  <div class="ad-slot" id="ad-in-content" style="width:300px;height:250px;margin-top:20px;">
+    <span aria-hidden="true">Advertisement</span>
+  </div>
+</div>
+
+<script>
+  import { initQuiz } from "../scripts/quizApp";
+  const root = document.getElementById("quiz-root");
+  if (root) initQuiz(root);
+</script>
+
+<style>
+  .quiz-card {
+    max-width: 560px;
+  }
+  .q-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .q-number {
+    font-family: "Lora", Georgia, serif;
+    font-size: 2rem;
+    color: var(--gold);
+  }
+  .q-category {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .q-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 6px 0 18px;
+  }
+  .q-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .feedback {
+    min-height: 1.4em;
+    font-size: 0.95rem;
+    margin: 10px 0;
+  }
+  .feedback.correct {
+    color: #2f7a4f;
+  }
+  .feedback.incorrect {
+    color: var(--red-dark);
+  }
+  .q-score {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 14px;
+  }
+  .ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream-light);
+    border: 1px dashed var(--border);
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+</style>
