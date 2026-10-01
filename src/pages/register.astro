@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Register — Daily Trivia Sprint">
+  <main class="wrap auth-wrap">
+    <h1 class="serif">Register</h1>
+    <form class="auth-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button class="btn btn-primary" type="submit">Create account</button>
+    </form>
+    <p class="auth-alt">Already playing? <a href="/login">Login</a>.</p>
+  </main>
+
+  <style>
+    .auth-wrap {
+      max-width: 400px;
+      padding: 48px 24px 60px;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .auth-form label {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-top: 10px;
+    }
+    .auth-form input {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .auth-form button {
+      margin-top: 18px;
+    }
+    .auth-alt {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+  </style>
+</BaseLayout>
