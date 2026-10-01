@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Mascot from "../components/Mascot.astro";
+---
+
+<BaseLayout
+  title="Daily Trivia Sprint — Today's Question"
+  description="Get a daily trivia question dropped in your inbox, plus access to the full 60-question sprint."
+>
+  <main class="wrap hello-wrap">
+    <p class="tagline">
+      Are you a <strong>Trivia Sprinter</strong>, or more of a <strong>casual browser</strong>?
+    </p>
+
+    <h1 class="serif today-heading">Today's Question</h1>
+
+    <div class="today-card card">
+      <p class="today-q">
+        Which planet is known for its prominent ring system, visible from
+        Earth with a small telescope?
+      </p>
+      <form class="today-form" id="signup-form">
+        <label class="choice"><input type="radio" name="today" value="mars" /> Mars</label>
+        <label class="choice"><input type="radio" name="today" value="saturn" /> Saturn</label>
+        <label class="choice"><input type="radio" name="today" value="mercury" /> Mercury</label>
+        <label class="choice"><input type="radio" name="today" value="venus" /> Venus</label>
+
+        <label class="email-label" for="email">Enter your email to see the answer and get tomorrow's question too:</label>
+        <input class="email-input" type="email" id="email" name="email" placeholder="you@example.com" required />
+        <button class="btn btn-primary" type="submit">Get My Answer</button>
+      </form>
+      <p class="fineprint">Daily Trivia Sprint is 100% free. Unsubscribe anytime.</p>
+    </div>
+
+    <Mascot className="hello-mascot" />
+  </main>
+
+  <script>
+    const form = document.getElementById("signup-form");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const card = form.closest(".today-card");
+      if (card) {
+        card.innerHTML =
+          '<p class="today-q">Saturn is correct! Its wide, bright ring system makes it one of the most recognizable planets in the solar system.</p><p class="fineprint">Thanks for joining &mdash; check your inbox tomorrow for the next question.</p>';
+      }
+    });
+  </script>
+
+  <style>
+    .hello-wrap {
+      max-width: 640px;
+      text-align: center;
+      padding: 48px 24px 60px;
+    }
+    .tagline {
+      color: var(--ink-soft);
+    }
+    .today-heading {
+      font-size: 2.2rem;
+      margin: 6px 0 24px;
+    }
+    .today-card {
+      text-align: left;
+    }
+    .today-q {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .today-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .email-label {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .email-input {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .fineprint {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      margin-top: 14px;
+    }
+    .hello-mascot {
+      width: 140px;
+      margin: 36px auto 0;
+      display: block;
+    }
+  </style>
+</BaseLayout>
